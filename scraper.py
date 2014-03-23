@@ -39,7 +39,7 @@ class AirbnbScraper:
         year = 2014
         for month in [4, 5]:
             url = "https://www.airbnb.com/rooms/calendar_tab_inner2/%s?cal_month=%s&cal_year=%s&currency=USD" % (lid, month, year)
-            r = self.get(url, referer='https://www.airbnb.com/listings/%s' % lid, xhr=True)
+            r = self.get(url, referer='https://www.airbnb.com/listings/%s' % lid, xhr=True, min_sleep=2, max_add=30)
             dom = lxml.html.fromstring(r.content)
 
             inMonth = False
