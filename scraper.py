@@ -71,7 +71,8 @@ class AirbnbScraper:
                         print >> sys.stderr, "error: listing is neither available or unavailable: %s" % classes
                         sys.exit(1)
 
-                    cal[(month, day, year)] = available
+                    k = "%s/%s/%s" % (month, day, year)
+                    cal[k] = available
 
         return cal
 
